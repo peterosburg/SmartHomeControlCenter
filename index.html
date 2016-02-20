@@ -23,8 +23,7 @@
 		<!-- custom stylesheet -->
 		<link rel="stylesheet" href="stylez.css">
 
-		<!-- custom script -->
-		<script src="scripts/scripts.js"></script>
+		<!-- custom script -->		
 		<script src="scripts/mainController.js"></script>
 		<script src="scripts/locale.js"></script>
 		<script src="scripts/weatherController.js"></script>
@@ -54,9 +53,18 @@
 				<div id="weatherInfo" onclick="weatherController.toggleForecast()"></div>
 				<div id="weatherForecast" onclick="weatherController.toggleForecast()">
 					<div class="ui-grid-b ui-responsive">
-						<div class="ui-block-a" id="weatherForecastToday"><div id="today_title" class="forecastTitle">Today</div><div id="todayForecastEntries"></div></div>
-						<div class="ui-block-b" id="weatherForecastTomorrow"><div id="tomorrow_title" class="forecastTitle">Tomorrow</div><div id="tomorrowForecastEntries"></div></div>
-						<div class="ui-block-c" id="weatherForecastTwoDays"><div id="day_after_tomorrow_title" class="forecastTitle">DaT</div><div id="dayAfterTomorrowForecastEntries"></div></div>
+						<div class="ui-block-a" id="weatherForecastToday">
+							<div id="today_title" class="forecastTitle">Today</div>
+							<table data-role="table" class="ui-responsive forecastEntries" id="todayForecastEntries"></table>
+						</div>
+						<div class="ui-block-b" id="weatherForecastTomorrow">
+							<div id="tomorrow_title" class="forecastTitle">Tomorrow</div>
+							<table data-role="table" class="ui-responsive forecastEntries" id="tomorrowForecastEntries"></table>
+						</div>
+						<div class="ui-block-c" id="weatherForecastTwoDays">
+							<div id="day_after_tomorrow_title" class="forecastTitle">DaT</div>							
+							<table data-role="table" class="ui-responsive forecastEntries" id="dayAfterTomorrowForecastEntries"></table>
+						</div>
 					</div>
 				</div>
 			</div>

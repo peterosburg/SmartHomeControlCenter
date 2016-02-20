@@ -6,6 +6,7 @@
 	"today"				: "Heute",
 	"tomorrow"			: "Morgen",
 	"day_after_tomorrow": "Übermorgen",
+	"oclock"			: "Uhr",
 
 	"smarthome_title"	: "SmartHome Control Center"
 }

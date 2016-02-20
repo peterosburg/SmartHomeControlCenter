@@ -117,10 +117,10 @@ var weatherController = {
 		if($('#currentTemperature').length < 1) {
 			var div = $('<div />', {
 				id: 'currentTemperature'
-			}).html(roundedTemp + ' &deg;C');
+			}).html(roundedTemp + ' ' + weatherController.getTemperatureUnit());
 			div.appendTo($('#weatherInfo'));
 		} else {
-			($('currentTemperature')).html(roundedTemp + ' &deg;C');
+			($('currentTemperature')).html(roundedTemp + ' '+ weatherController.getTemperatureUnit());
 		}
 	},
 
@@ -230,22 +230,51 @@ var weatherController = {
 	},
 
 	showTodayForecastEntries : function(value, index, array) {
-		weatherController.showValueInForecastDiv(value, '#todayForecastEntries');
+		weatherController.showValueInForecastDiv(value, index, 'todayForecastEntries');
+		
 	},
 
 	showTomorrowForecastEntries : function(value, index, array) {
-		weatherController.showValueInForecastDiv(value, '#tomorrowForecastEntries')
+		weatherController.showValueInForecastDiv(value, index, 'tomorrowForecastEntries')
 	},
 
 	showDayAfterTomorrowForecastEntries : function(value, index, array) {
-		weatherController.showValueInForecastDiv(value, '#dayAfterTomorrowForecastEntries')
+		weatherController.showValueInForecastDiv(value, index, 'dayAfterTomorrowForecastEntries')
 	},
 
-	showValueInForecastDiv : function(value, divId) {
-		var currentEntries = $(divId).html();
+	showValueInForecastDiv : function(value, index, divId) {		
 		var timeString = value.dt_txt.substr(11,5);
 
-		if(timeString === '06:00' || timeString === '12:00' || timeString === '18:00' || timeString === '21:00')
-			$(divId).html(currentEntries + '<br/>' + timeString + '&nbsp;&nbsp;&nbsp;' + value.main.temp.toFixed(1) + ' &deg;');
+		// only consider the below times for being displayed - openweathermap provides values for every 3 hrs
+		if(timeString === '06:00' || timeString === '12:00' || timeString === '18:00' || timeString === '21:00') {
+			$('#' + divId).append($('<tr>', {'id' : divId + '_row'+index}));
+
+			$('#' + divId + '_row'+index).append($('<td />', {'class' : 'forecastTime'}).html(weatherController.getTimeDescriptor(timeString)));
+			$('#' + divId + '_row'+index).append($('<td />', {'class' : 'forecastTemperature'}).html(value.main.temp.toFixed(1) + ' ' + weatherController.getTemperatureUnit()));
+
+			//weatherController.createCurrentWeatherIcon(weather_data.weather[0].icon, weather_data.weather[0].description);
+
+			$('#' + divId + '_row' + index).append($('<td />').append($('<img />', {
+				class: 'forecastWeatherIcon',
+				src: 'http://openweathermap.org/img/w/' + value.weather[0].icon +'.png',
+				alt: value.weather[0].description,
+				title: value.weather[0].description
+			})));
+		}
+	},
+
+	getTemperatureUnit : function() {
+		// return the unit based on the configuration setting
+		var returnValue = '&deg;'
+		if(weatherController.configuration.openweathermapUnits === 'metric') {
+			returnValue = returnValue + 'C';
+		} else if(weatherController.configuration.openweathermapUnits === 'imperial') {
+			returnValue = returnValue + 'F';
+		}
+		return returnValue;
+	},
+
+	getTimeDescriptor : function(time) {
+		return time + ' ' + locale.texts.oclock;
 	}
 };

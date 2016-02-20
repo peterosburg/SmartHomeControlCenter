@@ -66,3 +66,28 @@ small {
 #currentCity {
 	border-bottom: 1px solid white;
 }
+
+.forecastEntries {
+ 	margin-left: 10pt;
+ 	margin-right: 10pt; 	 	
+ 	width: 90%;
+ 	font-size: 10pt;
+ 	
+}
+
+.forecastEntries td {
+	padding: 0;
+}
+
+.forecastTime {	
+	text-align: right;		
+	color: gray;
+}
+
+.forecastWeatherIcon {
+	height: 2em;
+}
+
+.forecastTemperature {
+	
+}
