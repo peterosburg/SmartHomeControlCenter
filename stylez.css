@@ -1,0 +1,68 @@
+html {	
+	font-family: 'Roboto', sans-serif;
+}
+
+small {
+	font-size: 6pt;
+	font-family: 'Roboto', sans-serif;
+	font-weight: lighter;
+}
+
+#header small {	
+	text-align: right;
+	display: block;
+	padding-right: 1em;
+	padding-bottom: 0.5em;
+	color: gray;
+}
+
+#footer small {
+	text-align: right;
+	display: block;	
+}
+
+#home {
+	text-align: center;
+}
+
+#home #navigation {
+	padding-top: 20%;
+	
+	margin: 0;
+}
+
+#home hr {
+	margin: 0;
+	padding: 0;
+}
+
+#weatherInfo {
+	text-align: right;	
+	padding-top: 4em;	
+	width: 200pt;
+	position: absolute;
+	right: 1em;
+}
+
+#weatherForecast {
+	padding-top: 4em;	
+	width: 500pt;
+	position: absolute;
+	right: 1em;	
+	display: none;
+}
+
+#weatherInfo #currentTemperature {
+	font-size: 40pt;
+	font-weight: lighter;
+}
+
+.forecastTitle {
+	border-bottom: 1px solid white;	
+	margin-left: 10pt;
+	margin-right: 10pt;
+}
+
+#currentCity {
+	border-bottom: 1px solid white;
+}

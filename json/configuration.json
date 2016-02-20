@@ -1,0 +1,20 @@
+{	
+	"development" 	: {
+		"consoleLogging"		: true,
+		"loaded"				: true	
+	},
+	
+	"general" 		: {
+		"language"				: "de",
+		"title"					: "Smart Home Action Center",
+		"version"				: "0.2",
+		"author"				: "Peter Osburg"
+	},
+
+	"weather"		: {
+		"openweathermapAPIKey"	: "<your API key>",
+		"openweathermapCityId"	: "<your city ID>",
+		"openweathermapUnits"	: "metric",
+		"currentWeatherRefresh" : "15000"
+	}	
+}

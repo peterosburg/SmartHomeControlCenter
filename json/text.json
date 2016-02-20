@@ -1,0 +1,11 @@
+{
+	"smarthome" 		: "SmartHome",
+	"calendar" 			: "Kalender",
+	"information" 		: "Informationen",
+
+	"today"				: "Heute",
+	"tomorrow"			: "Morgen",
+	"day_after_tomorrow": "Übermorgen",
+
+	"smarthome_title"	: "SmartHome Control Center"
+}
