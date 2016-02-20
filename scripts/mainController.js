@@ -47,7 +47,7 @@ var mainController = {
 			console.log('Logging is disabled by configuration. You will see no more logs here');
 
 		$('#applicationTitle').html(data.general.title);
-		$('#versionInfo').html('Version '+data.version+' - Copryright 2016: ' + data.author);
+		$('#versionInfo').html('Version '+data.general.version+' - Copryright 2016: ' + data.general.author);
 	},
 
 	log : function(msg) {
