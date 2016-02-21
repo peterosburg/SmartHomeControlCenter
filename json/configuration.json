@@ -16,5 +16,25 @@
 		"openweathermapCityId"	: "<your city ID>",
 		"openweathermapUnits"	: "metric",
 		"currentWeatherRefresh" : "15000"
-	}	
+	},
+
+	"distance"		: {
+		"googleMapsDistanceAPIKey" : "<your API key>",
+		"origins" : [
+			{
+			"description" 	: "Home",
+			"address"		: "1600 Amphitheatre Parkway Mountain View CA 94043"
+			}
+		], 
+		"destinations" : [
+			{
+				"description" 	: "Work",
+				"address" 		: "1 Infinite Loop Cupertino, CA 95014"
+			},
+			{
+				"description" 	: "Meetings",
+				"address"		: "747 Howard St San Francisco"
+			}
+		]
+	}
 }

@@ -91,3 +91,8 @@ small {
 .forecastTemperature {
 	
 }
+
+#dateAndTime {
+	text-align: right;
+	color: lightgrey;
+}

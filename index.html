@@ -4,7 +4,7 @@
 		<!-- jQuery Stuff including jQuery mobile -->
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">		
-		<script src="scripts/jquery-2.2.0.min.js"></script>		
+		<script src="scripts/jquery-2.2.0.min.js"></script>
 		<!-- needed for Chrome compatibility -->
 		<script>
 		    $(document).bind('mobileinit',function(){
@@ -18,7 +18,7 @@
 		<!-- End of jQuery stuff -->
 
 		<!-- Google Font -->
-		<link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+		<link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>				
 
 		<!-- custom stylesheet -->
 		<link rel="stylesheet" href="stylez.css">
@@ -26,14 +26,15 @@
 		<!-- custom script -->		
 		<script src="scripts/mainController.js"></script>
 		<script src="scripts/locale.js"></script>
-		<script src="scripts/weatherController.js"></script>
+		<script src="scripts/googleMapsController.js"></script>
+
+
 		<script type="text/javascript">mainController.startApplication();</script>
 
 		<title>Home Control Center by Peter Osburg</title>
 		
 	</head>
 	<body>
-
 		<!-- Homepage -->
 		<div data-role="page" data-theme="b" id="home">		
 			<div data-role="header" id="header">
@@ -42,10 +43,11 @@
 			</div>
 
 			<div data-role="main" class="ui-content centered">
+				<div id="dateAndTime"></div>
 				<div data-role="controlgroup" data-type="horizontal" id="navigation">
 					<a href="#smarthome" class="ui-btn" id="nav_smarthome"></a>
 					<a href="#" class="ui-btn" id="nav_calendar">Kalender</a>
-					<a href="#" class="ui-btn" id="nav_information">Informationen</a>
+					<a href="#information" class="ui-btn" id="nav_information">Informationen</a>
 				</div>
 				
 				<!-- script type="text/javascript">weatherController.getWeather();</script -->
@@ -81,6 +83,15 @@
 			</div>
 		</div>
 		<!-- End Smarthome -->
+
+		<!-- Information -->
+		<div data-role="page" data-theme="b" id="information">
+			<div data-role="header" id="header">
+				<a href="#home" class="ui-btn ui-icon-home ui-btn-icon-left">Home</a>
+				<h1 id="smarthome_title">Informationen</h1>
+			</div>
+		</div>
+		<!-- End Information -->
 
 
 
