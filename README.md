@@ -17,5 +17,6 @@ Besides the smart home functionality, the SmartHomeControlCenter shall also prov
 * Domoticz API - to retrieve device information & to control devices
 
 ## Features
+* Using jQuery Mobile (https://jquerymobile.com/) to have a proper touch enabled interface mainly focusing on a 1024 x 768 screen
 * Configure the SmartHomeControlCenter by changing the configuration file. For preventing getting your configurations overwritten with each update, copy the file to configuration_custom.json and make your settings.
 * Localization support by making use of texts.json (later I will add texts_en.json and therefore at least have an english translation)
