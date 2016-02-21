@@ -38,14 +38,14 @@ small {
 
 #weatherInfo {
 	text-align: right;	
-	padding-top: 4em;	
+	padding-top: 6em;	
 	width: 200pt;
 	position: absolute;
 	right: 1em;
 }
 
 #weatherForecast {
-	padding-top: 4em;	
+	padding-top: 6em;	
 	width: 500pt;
 	position: absolute;
 	right: 1em;	
