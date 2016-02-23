@@ -5,8 +5,11 @@ var googleMapsController = {
 	// used to track which object is been calculated by the API as there is no direct refence in the APIs response yet
 	routesIndex : 0,
 
-	loadTimesOfRoutes : function () {
+	loadTimesOfRoutes : function () {		
 		googleMapsController.getRoutes();
+
+		// make sure to get rid of the already displayed routes
+
 
 		// reset the counter and start with the first entry
 		// all other entries will be processed in the callback method incrementally
@@ -25,7 +28,7 @@ var googleMapsController = {
 			mainController.log("Successfully retrieved distance time for route " + googleMapsController.routes[index].name);
 			googleMapsController.routes[index].distance = response.rows[0].elements[0].distance.text;
 			googleMapsController.routes[index].time = response.rows[0].elements[0].duration.text;
-			
+			googleMapsController.showRouteCollapsed(googleMapsController.routes[index]);
 		}
 
 		// count the index up and check if you have more entries to process
@@ -57,5 +60,39 @@ var googleMapsController = {
 				trafficModel: google.maps.TrafficModel.BEST_GUESS
 			}
 		}, googleMapsController.distanceMatrixCallback);	
+	},
+
+	showRouteCollapsed : function(route) {
+		// make sure to have an id without whitespaces
+		var id = 'route_' + (route.name.replace(/ /g, ''));
+		var div = $('#'+id);
+		
+		// don't create a new div if it was already added, just empty it ... otherwise go and create
+		if(div.length < 1) {
+			div = $('<div />', {
+				id : id,
+				class : 'route_information'
+			});
+			div.appendTo(information_content);			
+		}
+		else {
+			div.empty();
+		}
+		
+		// always recreate that content
+		var head = $('<div />', {
+			class : 'route_headline'
+		}).html(route.name);
+		head.appendTo(div);
+
+		var distance = $('<div />', {
+			class : 'route_distance' 
+		}).html(route.distance);
+		distance.appendTo(div);
+
+		var time = $('<div />', {
+			class : 'route_time'
+		}).html(route.time);
+		time.appendTo(div);
 	}
 };

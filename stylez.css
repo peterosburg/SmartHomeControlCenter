@@ -96,3 +96,19 @@ small {
 	text-align: right;
 	color: lightgrey;
 }
+
+.route_information {
+	clear: both;
+	text-align: right;
+	margin-bottom: 4em;
+	font-size: 10pt;
+	width: 20%;
+	padding-left: 2em;
+	float: right;
+}
+
+.route_headline {
+	border-bottom: 1px solid white;
+	font-size: 12pt;
+}
+
