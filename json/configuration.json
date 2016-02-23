@@ -18,23 +18,24 @@
 		"currentWeatherRefresh" : "15000"
 	},
 
-	"distance"		: {
+	"distanceInformation"		: {
 		"googleMapsDistanceAPIKey" : "<your API key>",
-		"origins" : [
+		"distanceUnits"			: "metric",
+		"routes" : [
 			{
-			"description" 	: "Home",
-			"address"		: "1600 Amphitheatre Parkway Mountain View CA 94043"
-			}
-		], 
-		"destinations" : [
-			{
-				"description" 	: "Work",
-				"address" 		: "1 Infinite Loop Cupertino, CA 95014"
+				"name"			: "Route to meetings",
+				"origin" 		: ["1600 Amphitheatre Parkway Mountain View CA 94043"],
+				"destination"	: ["747 Howard St San Francisco"],
+				"distance"		: "0",
+				"time"			: "0"
 			},
 			{
-				"description" 	: "Meetings",
-				"address"		: "747 Howard St San Francisco"
+				"name"			: "Highway to hell",
+				"origin" 		: ["1600 Amphitheatre Parkway Mountain View CA 94043"],
+				"destination"	: ["1 Infinite Loop Cupertino, CA 95014"],
+				"distance"		: "0",
+				"time"			: "0"
 			}
-		]
+		]	
 	}
 }

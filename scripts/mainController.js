@@ -116,7 +116,7 @@ var mainController = {
 	configureOnClickHandlers : function() {
 		// information button shall trigger reading the time values for origin to destination travels
 		$('#nav_information').click(function(){
-			googleMapsController.loadTimesOfDistances();
+			googleMapsController.loadTimesOfRoutes();
 		});
 	}
 
