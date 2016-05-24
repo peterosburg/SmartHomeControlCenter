@@ -37,5 +37,12 @@
 				"time"			: "0"
 			}
 		]	
+	},
+
+	"domoticz"		: {
+		"url"					: "domoticz_ip",
+		"port"					: "domoticz_port",
+		"user"					: "myUser",
+		"password"				: "myPassword"
 	}
 }
