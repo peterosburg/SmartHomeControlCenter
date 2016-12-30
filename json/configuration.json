@@ -40,7 +40,7 @@
 	},
 
 	"domoticz"		: {
-		"url"					: "domoticz_ip",
+		"url"					: "domoticz_ip_without_http(s)",
 		"port"					: "domoticz_port",
 		"user"					: "myUser",
 		"password"				: "myPassword"

@@ -13,6 +13,8 @@ var mainController = {
 	loadContentData : function() {
 		// first load the locales, as a callback, continue loading the weather data
 		mainController.loadLocalScript('weatherController.js', mainController.loadWeatherData);	
+		// load the domoticz data
+		mainController.loadLocalScript('domoticzController.js', mainController.loadDomoticzData);
 		// come on show the time, but don't do it before the locales are loaded
 		mainController.displayDateAndTime();
 		// load the Google Maps API and afterwards add the controller file 
@@ -69,6 +71,10 @@ var mainController = {
 		// dynamically load the controller class
 		mainController.loadLocalScript('googleMapsController.js');
 		//, mainController.loadTimesOfDistances
+	},
+
+	loadDomoticzData : function() {
+		domoticzController.getDomoticzData();
 	},
 
 	/*loadTimesOfDistances : function() {
